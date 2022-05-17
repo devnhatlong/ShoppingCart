@@ -33,29 +33,16 @@ export class AppComponent {
     },
   ];
 
-  numberItems: number;
-  subTotal: number;
+  numberItems = 3;
 
   removeProduct(productId: string) {
     // Delete product
     const index = this.products.findIndex((product: { id: string; }) => product.id === productId);
+
     this.products.splice(index, 1);
   }
-  // Tính tổng tiền và cập nhật số lượng item
-  ngDoCheck() {
-    this.numberItems = 0;
-    this.subTotal = 0;
-
-    for (const product of this.products) {
-      this.numberItems += product.quantity;
-      this.subTotal += product.price * product.quantity;
-    }
-    this.numberItems = this.numberItems;
-    this.subTotal = this.subTotal;
 
 
-    // this.discount = (this.subTotal * this.discountPercent) / 100;
-    // this.tax = ((this.subTotal - this.discount) * this.taxPercent) / 100;
-  }
+
 }
 

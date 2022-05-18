@@ -8,7 +8,7 @@ export class CartHeaderComponent implements OnInit {
 
   constructor() { }
 
-  @Input() numberItems: number;
+  @Input() numberItems: number
 
   ngOnInit(): void {
   }

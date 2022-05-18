@@ -33,13 +33,14 @@ export class AppComponent {
     },
   ];
 
-  numberItems = 3;
+  numberItems: number = this.products.length;
 
-  removeProduct(productId: string) {
+  removeProduct(productId: string): void {
     // Delete product
     const index = this.products.findIndex((product: { id: string; }) => product.id === productId);
 
     this.products.splice(index, 1);
+
   }
 
 
